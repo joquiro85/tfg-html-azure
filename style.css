@@ -1,98 +1,196 @@
-body {
+/* RESET Y BASE */
+* {
    margin: 0;
    padding: 0;
-   font-family: 'Courier New', Courier, monospace;
-   background: url("Images/BG.webp") no-repeat center center/cover;
-   color: #000000;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 100vh;
-   text-align: center;
-   position: relative;
-   overflow: hidden;
+   box-sizing: border-box;
 }
 
-/* Opacar el fondo con una capa extra */
-/* 🔥 Corrección en el fondo */
-body::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
+html,
+body {
    height: 100%;
-   background: url("Images/BG.webp") no-repeat center center/cover;
-   filter: blur(15px); 
-   opacity: 0.9; /* Ajusta opacidad si es necesario */
-   z-index: -1;
 }
 
-
-.container {
-   background: rgba(255, 255, 255, 0.6); /* Más transparente */
-   backdrop-filter: blur(10px); /* Suaviza y da efecto glass */
-   -webkit-backdrop-filter: blur(15px);
-   padding: 50px;
-   border-radius: 20px;
-   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-   max-width: max-content;
-   border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil para efecto vidrio */
+body {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   background-color: #009de0;
+   color: #ffffff;
+   display: flex;
+   flex-direction: column;
+   scroll-behavior: smooth;
+   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
-/* Efectos animados */
-@keyframes bounce {
-   0%, 100% { transform: translateY(0); }
-   50% { transform: translateY(-10px); }
+main {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   transition: all 0.3s ease-in-out;
 }
 
-.digi-logo {
-   filter: drop-shadow(3px 3px 2px white);
-   max-width: 350px;
-   margin-bottom: 10px;
-   animation: bounce 2s infinite;
+/* HERO SECTION */
+.top-section {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 60px 5%;
+   flex-wrap: wrap;
+   transition: padding 0.3s ease;
 }
 
-.tfaws-logo {
-   filter: drop-shadow(1px 1px 3px rgb(255, 255, 255));
-   max-width: 200px;
-   margin-bottom: 5px;
+.logo-container {
+   width: 30%;
+   min-width: 200px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
-.aws-logo {
-   filter: drop-shadow(2px 2px 3px white);
-   max-width: 80px;
-   border-radius: 4px;
-   margin-right: 10px;
+.digitech-image {
+   width: 100%;
+   height: auto;
+   max-width: 600px;
+   object-fit: contain;
+   transition: all 0.3s ease;
 }
 
-h1 {
-   font-size: 40px;
-   margin: 20px 0;
-   font-weight: bold;
+.top-text {
+   width: 60%;
+   min-width: 280px;
+   z-index: 2;
+   transition: all 0.3s ease;
+}
+
+.top-text h1 {
+   font-size: 4rem;
    text-transform: uppercase;
+   margin-bottom: 20px;
+   color: #fefefe;
+   transition: font-size 0.3s ease, text-align 0.3s ease;
 }
 
-h2 {
-   font-size: 35px;
-   margin-bottom: 70px;
+.top-text p {
+   font-size: 1.5rem;
+   color: #eaeaea;
+   margin-bottom: 40px;
+   line-height: 1.6;
+   transition: font-size 0.3s ease, color 0.3s ease;
 }
 
+/* DETAILS SECTION */
+.details-section {
+   background-color: #ffffff;
+   padding: 40px 5%;
+   text-align: center;
+   box-shadow: #6f6d6d 0px 0px 20px 0px;
+   transition: background-color 0.3s ease;
+}
+
+.details-section h2 {
+   font-size: 3rem;
+   margin-bottom: 10px;
+   color: #474747;
+   transition: font-size 0.3s ease;
+}
+
+.details-section p {
+   font-size: 1.1rem;
+   color: #474747;
+   margin-bottom: 50px;
+   transition: font-size 0.3s ease;
+}
+
+.logoterraws {
+   width: 10%;
+   min-width: 120px;
+   display: block;
+   margin: 0 auto;
+   height: auto;
+   object-fit: contain;
+   transition: max-width 0.3s ease;
+}
+
+/* INSTANCIA AWS */
 .instance-container {
    display: flex;
    align-items: center;
    justify-content: center;
+   gap: 8px;
+   margin: 60px auto 0;
+   flex-wrap: wrap;
+   transition: all 0.3s ease;
+}
+
+
+.aws-logo {
+   width: 50px;
+   max-width: 100%;
+   height: auto;
+   object-fit: contain;
+   border-radius: 4px;
+   transition: width 0.3s ease, margin 0.3s ease;
+   box-shadow: #6f6d6d 0px 0px 5px 0px;
 }
 
 .instance {
-   font-size: 16px;
-   font-weight: bold;
-   background: rgba(255, 255, 255, 0.8); /* Transparente para efecto glass */
-   color: red;
-   padding: 12px;
-   border-radius: 5px;
-   display: inline-block;
-   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+   font-size: 1rem;
+   font-weight: 500;
+   color: #ffffff;
+   margin-top: 10px;
+   transition: all 0.3s ease;
 }
 
+/* FOOTER */
+footer {
+   text-align: center;
+   padding: 20px;
+   font-size: 0.9rem;
+   color: #f5f5f5;
+   transition: color 0.3s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+   .top-section {
+      flex-direction: column;
+      padding: 40px 20px;
+   }
+
+   .logo-container,
+   .top-text {
+      width: 100%;
+      text-align: center;
+   }
+
+   .top-text h1,
+   .details-section h2 {
+      font-size: 6.5vw;
+      text-align: center;
+   }
+
+   .top-text p,
+   .details-section p {
+      font-size: 3.5vw;
+   }
+
+   .logoterraws {
+      margin-top: 20px;
+      width: 45%;
+   }
+
+   .instance-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 10px 0 60px 0;
+   }
+
+   .aws-logo {
+      width: 9vw;
+      margin-top: 10px;
+   }
+
+   .digitech-image {
+      height: auto;
+      max-width: 200px;
+   }
+}
