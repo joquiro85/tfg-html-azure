@@ -3,110 +3,130 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   font-family: 'Roboto', sans-serif;
 }
 
-html,
 body {
    height: 100%;
-}
-
-body {
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
-   background-color: #009de0;
-   color: #ffffff;
-   display: flex;
-   flex-direction: column;
-   scroll-behavior: smooth;
-   transition: background-color 0.3s ease, color 0.3s ease;
+   background-color: #e5f3ff;
+   color: #003c61;
 }
 
 main {
    flex: 1;
+}
+
+.page-container {
    display: flex;
    flex-direction: column;
-   transition: all 0.3s ease-in-out;
+   min-height: 100vh;
 }
 
-/* HERO SECTION */
+/* BOTONES */
+.button-group {
+   margin-top: 20px;
+}
+
+.btn {
+   display: inline-block;
+   background-color: #ffffff;
+   color: #009de0;
+   padding: 10px 20px;
+   margin: 30px 10px 0 0;
+   text-decoration: none;
+   font-size: clamp(0.65rem, 2.5vw, 1.2rem);
+   border-radius: 5px;
+   font-weight: bold;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   text-align: center;
+   max-width: 100%;
+   width: fit-content;
+}
+
+.btn:hover {
+   background-color: #7abaed;
+   transform: translateY(-5px);
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+   color: rgb(253, 253, 253);
+}
+
+/* SECCIÓN SUPERIOR */
 .top-section {
+   background-color: #009de0;
+   color: white;
+   padding: 20px 0px 30px;
+   text-align: center;
    display: flex;
-   justify-content: space-between;
+   flex-direction: column;
    align-items: center;
-   padding: 60px 5%;
-   flex-wrap: wrap;
-   transition: padding 0.3s ease;
-}
-
-.logo-container {
-   width: 30%;
-   min-width: 200px;
-   display: flex;
    justify-content: center;
-   align-items: center;
+   gap: 10px;
+   z-index: 2;
+   position: relative;
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); 
 }
 
 .digitech-image {
-   width: 100%;
-   height: auto;
-   max-width: 600px;
-   object-fit: contain;
-   transition: all 0.3s ease;
+   max-width: 300px;
 }
 
 .top-text {
    width: 60%;
    min-width: 280px;
    z-index: 2;
-   transition: all 0.3s ease;
+   transition: all .3s ease;
 }
 
 .top-text h1 {
-   font-size: 4rem;
-   text-transform: uppercase;
-   margin-bottom: 20px;
-   color: #fefefe;
-   transition: font-size 0.3s ease, text-align 0.3s ease;
+   font-size: 3.5rem;
+   color: #ffffff;
+   letter-spacing: 1px;
 }
 
 .top-text p {
-   font-size: 1.5rem;
-   color: #eaeaea;
-   margin-bottom: 40px;
-   line-height: 1.6;
-   transition: font-size 0.3s ease, color 0.3s ease;
+   font-size: 1.3rem;
+   color: #e9f6ff;
+   max-width: 700px;
+   margin: 0 auto;
+   line-height: 1.5;
 }
 
-/* DETAILS SECTION */
+/* SECCIÓN DETALLES */
 .details-section {
    background-color: #ffffff;
-   padding: 40px 5%;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   padding: 60px 5%;
    text-align: center;
-   box-shadow: #6f6d6d 0px 0px 20px 0px;
-   transition: background-color 0.3s ease;
+   border-radius: 16px;
+   margin: 40px 5%;
+}
+
+.details-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .details-section h2 {
-   font-size: 3rem;
-   margin-bottom: 10px;
-   color: #474747;
-   transition: font-size 0.3s ease;
+   font-size: 2.5rem;
+   color: #003c61;
+   margin-bottom: 15px;
 }
 
 .details-section p {
    font-size: 1.1rem;
-   color: #474747;
-   margin-bottom: 50px;
-   transition: font-size 0.3s ease;
+   color: #4a4a4a;
+   margin-bottom: 30px;
 }
 
 .logoterraws {
-   width: 10%;
-   min-width: 120px;
+   width: clamp(120px, 45vw, 200px);
    display: block;
    margin: 0 auto;
    height: auto;
    object-fit: contain;
-   transition: max-width 0.3s ease;
+   transition: max-width .3s ease
 }
 
 /* INSTANCIA AWS */
@@ -117,9 +137,8 @@ main {
    gap: 8px;
    margin: 60px auto 0;
    flex-wrap: wrap;
-   transition: all 0.3s ease;
+   transition: all .3s ease
 }
-
 
 .aws-logo {
    width: 50px;
@@ -127,70 +146,192 @@ main {
    height: auto;
    object-fit: contain;
    border-radius: 4px;
-   transition: width 0.3s ease, margin 0.3s ease;
-   box-shadow: #6f6d6d 0px 0px 5px 0px;
+   transition: width .3s ease, margin .3s ease;
+   box-shadow: #6f6d6d 0 0 5px 0
 }
 
 .instance {
-   font-size: 1rem;
+   font-size: clamp(1rem, 3.5vw, 1.5rem);
    font-weight: 500;
-   color: #ffffff;
+   color: #555555;
    margin-top: 10px;
-   transition: all 0.3s ease;
+   transition: all .3s ease
 }
 
-/* FOOTER */
+/* PIE DE PÁGINA */
 footer {
    text-align: center;
+   padding: 10px;
+   font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+   color: #777;
+   background-color: #f9fbfc;
+   border-top: 1px solid #e1e8ef;
+}
+
+/* SECCIÓN GRID */
+.section-grid {
+   padding: 60px 5%;
+   background-color: inherit;
+}
+
+.section-grid h2 {
+   text-align: center;
+   margin-bottom: 40px;
+   font-size: 2.5rem;
+   background-color: #e5f3ff;
+   color: #003c61;
+}
+
+.card-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 20px;
+}
+
+.card {
+   background-color: #ffffff;
+   border: 1px solid #cce4f7;
+   border-radius: 12px;
    padding: 20px;
-   font-size: 0.9rem;
-   color: #f5f5f5;
-   transition: color 0.3s ease;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   text-align: center;
+}
+
+.card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+   width: 60px;
+   height: 60px;
+   object-fit: contain;
+   margin-bottom: 10px;
+}
+
+.card h3 {
+   font-size: 1.2rem;
+   margin-bottom: 10px;
+   color: #005b94;
+   border-bottom: 1px solid #d6eaff;
+   padding-bottom: 6px;
+}
+
+.card p {
+   font-size: 0.95rem;
+   line-height: 1.6;
+}
+
+.card code {
+   background-color: #f0f7fc;
+   padding: 2px 6px;
+   border-radius: 4px;
+   font-family: 'Courier New', monospace;
+   font-size: 0.85rem;
+}
+
+.card a {
+   color: #1990ec;
+   text-decoration: underline;
+   transition: color .3s ease
+}
+
+.card a:hover {
+   color: #fff
+}
+
+.card ul {
+   list-style: none;
+   padding-left: 0
+}
+
+.card ul li {
+   margin-bottom: 10px;
+   font-size: .95rem
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+   0% {
+      transform: translateY(0)
+   }
+   50% {
+      transform: translateY(-8px)
+   }
+   100% {
+      transform: translateY(0)
+   }
+}
+
+.float {
+   animation: float 2s ease-in-out infinite
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media(max-width:1024px) {
+   .card-3-columns {
+      grid-template-columns: repeat(2, 1fr)
+   }
+}
+
+@media(max-width:600px) {
+   .card-3-columns {
+      grid-template-columns: 1fr
+   }
+}
+
+@media(max-width:768px) {
    .top-section {
       flex-direction: column;
-      padding: 40px 20px;
+      padding: 40px 20px
    }
 
    .logo-container,
    .top-text {
       width: 100%;
-      text-align: center;
+      text-align: center
    }
 
    .top-text h1,
    .details-section h2 {
       font-size: 6.5vw;
-      text-align: center;
+      text-align: center
    }
 
    .top-text p,
    .details-section p {
-      font-size: 3.5vw;
+      font-size: 3.5vw
    }
 
    .logoterraws {
       margin-top: 20px;
-      width: 45%;
    }
 
    .instance-container {
       flex-direction: column;
       align-items: center;
       text-align: center;
-      margin: 10px 0 60px 0;
+      margin: 10px 0 60px 0
    }
 
    .aws-logo {
-      width: 9vw;
-      margin-top: 10px;
+      width: 15vw;
+      margin-top: 10px
    }
 
    .digitech-image {
-      height: auto;
-      max-width: 200px;
+      width: 70vw;
+      max-width: 200px
+   }
+
+   .button-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .btn {
+      width: 50%;
    }
 }
