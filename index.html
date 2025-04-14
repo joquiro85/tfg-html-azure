@@ -2,42 +2,52 @@
 <html lang="es">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>TFG | Jesús Quimbay Rojas</title>
-   <link rel="stylesheet" href="style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
+   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-   <main>
-      <section class="top-section">
-         <div class="logo-container">
-            <img src="Images\digitechfp.png" alt="Logo DIGITECH" class="digitech-image">
-         </div>
-         <div class="top-text">
-            <h1>Trabajo Final de Grado</h1>
-            <p>Automatización de Infraestructura en la Nube con Terraform y Amazon Web Services. Un enfoque moderno para
-               entornos escalables, seguros y eficientes.</p>
-         </div>
-      </section>
+   <div class="page-container">
+      <main>
+         <section class="top-section">
+            <div class="logo-container">
+               <img src="Images/digitechfp.png" alt="Logo DIGITECH" class="digitech-image" />
+            </div>
+            <div class="top-text">
+               <h1>Trabajo Final de Grado</h1>
+               <p>
+                  Despliegue automatizado de infraestructura en Amazon Web Services
+                  (AWS) utilizando Terraform como herramienta de IaC para
+                  aprovisionamiento eficiente, repetible y seguro.
+               </p>
+               <div class="button-group">
+                  <a href="tecnologias.html" class="btn">Tecnologías usadas</a>
+                  <a href="componentes.html" class="btn">Recursos usados</a>
+               </div>
+            </div>
+         </section>
 
-      <section class="details-section" id="proyecto">
-         <h2>Jesús Quimbay Rojas</h2>
-         <p>TFG Administración de Sistemas Informáticos en Red</p>
-         <img src="Images/terra-aws.png" alt="Logo Terraform AWS" class="logoterraws">
-      </section>
 
-      <section class="bottom-section">
-         <div class="instance-container">
-            <img class="aws-logo" src="Images/EC2.png" alt="Logo EC2">
-            <span class="instance">Instance ID: $INSTANCE_ID</span>
-         </div>
-      </section>
-   </main>
+         <section class="details-section" id="proyecto">
+            <h2>Jesús Quimbay Rojas</h2>
+            <p>TFG Administración de Sistemas Informáticos en Red</p>
+            <img src="Images/terra-aws.png" alt="Logo Terraform AWS" class="logoterraws" />
+         </section>
 
-   <footer>
-      © 2025 Jesús Quimbay Rojas — Trabajo Final de Grado ASIR
-   </footer>
+         <section class="bottom-section float">
+            <div class="instance-container">
+               <img class="aws-logo" src="Images/EC2.png" alt="Logo EC2" />
+               <span class="instance">Instance ID: $INSTANCE_ID</span>
+            </div>
+         </section>
+         <div class="spacer"></div>
+      </main>
+
+      <footer>© 2025 Jesús Quimbay Rojas — Trabajo Final de Grado ASIR</footer>
+   </div>
 </body>
 
 </html>
