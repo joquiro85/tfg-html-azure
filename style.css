@@ -153,9 +153,9 @@ main {
 .instance {
    font-size: clamp(1rem, 3.5vw, 1.5rem);
    font-weight: 500;
-   color: #555555;
+   color: #003c61;
    margin-top: 10px;
-   transition: all .3s ease
+   transition: all .3s ease;
 }
 
 /* PIE DE PÁGINA */
