@@ -40,7 +40,7 @@ main {
    transition: transform 0.3s ease, box-shadow 0.3s ease;
    text-align: center;
    max-width: 100%;
-   width: 150px ;
+   width: 150px;
    box-sizing: border-box;
 }
 
@@ -64,7 +64,7 @@ main {
    gap: 10px;
    z-index: 2;
    position: relative;
-   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); 
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .digitech-image {
@@ -104,8 +104,8 @@ main {
 }
 
 .details-section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+   transform: translateY(-5px);
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .details-section h2 {
@@ -164,8 +164,6 @@ footer {
    padding: 10px;
    font-size: clamp(0.7rem, 2.5vw, 0.9rem);
    color: #777;
-   background-color: #f9fbfc;
-   border-top: 1px solid #e1e8ef;
 }
 
 /* SECCIÓN GRID */
@@ -256,9 +254,11 @@ footer {
    0% {
       transform: translateY(0)
    }
+
    50% {
       transform: translateY(-8px)
    }
+
    100% {
       transform: translateY(0)
    }
