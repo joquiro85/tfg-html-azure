@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>TFG | Recursos del Proyecto</title>
+   <title>TFG | Recursos Azure</title>
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
    <link rel="stylesheet" href="style.css" />
 </head>
@@ -14,79 +14,104 @@
       <main>
          <section class="top-section">
             <div class="top-text">
-               <h1>Recursos</h1>
+               <h1>Recursos Azure</h1>
             </div>
          </section>
          <section class="section-grid">
-            <div class="card-grid card-3-columns">
+            <div class="card-grid">
                <div class="card">
-                  <img src="Images\EC2_x.png" alt="AWS EC2" />
-                  <h3>Amazon EC2</h3>
-                  <p>Instancias EC2 tanto públicas (nginx) como privadas (MySQL) como parte del backend del proyecto.
-                     Las
-                     instancias se gestionan con ASG y SSM.</p>
+                  <img src="Images\DNS-Zones.svg" alt="Zona DNS" />
+                  <h3>Zona DNS</h3>
+                  <p>
+                     Apunta el registro A del dominio raíz al Load Balancer y crea un
+                     CNAME para que
+                     <strong>www.tfg-joqr.es</strong>
+                     redirija al dominio raíz.
+                  </p>
                </div>
                <div class="card">
-                  <img src="Images\VPC.svg" alt="VPC" />
-                  <h3>VPC y Subredes</h3>
-                  <p>Red VPC personalizada con subredes públicas y privadas distribuidas en dos zonas de disponibilidad
-                     para
-                     segmentación y seguridad.</p>
+                  <img src="Images\Resource-Groups.svg" alt="Resource Group" />
+                  <h3>Resource Group</h3>
+                  <p>
+                     Data source para referenciar el grupo de recursos
+                     <strong>TFG-Infra</strong>.
+                  </p>
+               </div>
+               <div class="card">
+                  <img src="Images\Load-Balancers.svg" alt="Load Balancer" />
+                  <h3>Load Balancer</h3>
+                  <p>
+                     Load Balancer Standard que reparte el tráfico HTTP en el puerto
+                     80 entre las instancias backend y dirige las conexiones TCP/80
+                     desde el frontend al pool.
+                  </p>
+               </div>
+               <div class="card">
+                  <img src="Images\azure-vms.svg" alt="Jumpbox VM" />
+                  <h3>Jumpbox VM</h3>
+                  <p>VM Linux para SSH y administración en la subred pública.</p>
+               </div>
+               <div class="card">
+                  <img src="Images\Azure-SQL-VM.svg" alt="MySQL VM" />
+                  <h3>MySQL VM</h3>
+                  <p>Instancia Ubuntu con MariaDB para la base de datos.</p>
+               </div>
+               <div class="card">
+                  <img src="Images\VM-Scale-Sets.svg" alt="Autoscale Setting" />
+                  <h3>Autoscale Setting</h3>
+                  <p>
+                     Escala automáticamente el número de instancias en función de la
+                     carga de CPU.
+                  </p>
                </div>
                <div class="card">
                   <img src="Images\NAT.svg" alt="NAT Gateway" />
                   <h3>NAT Gateway</h3>
-                  <p>Permite que las instancias privadas accedan a Internet sin recibir conexiones entrantes.</p>
-               </div>
-               <div class="card">
-                  <img src="Images\sg.png" alt="Security Groups" />
-                  <h3>Security Groups</h3>
-                  <p>Grupos de seguridad para controlar el tráfico en EC2, ALB y MySQL. Separan roles y protegen los
-                     accesos
-                     entre recursos.</p>
-               </div>
-               <div class="card">
-                  <img src="Images\template.svg" alt="Launch Template" />
-                  <h3>Launch Template</h3>
-                  <p>Define los parámetros predeterminados de instancias EC2, incluyendo AMI, tipo, clave, SSM y
-                     <code>user_data.sh</code>.
+                  <p>
+                     Proporciona salida a Internet para el subnet privado.Vincula la
+                     IP pública al NAT Gateway.
                   </p>
                </div>
                <div class="card">
-                  <img src="Images\IAM_Role.svg" alt="IAM Role" />
-                  <h3>IAM Role & Instance Profile</h3>
-                  <p>Permite acceso SSM sin claves SSH usando el rol <code>AmazonSSMManagedInstanceCore</code>.</p>
-               </div>
-               <div class="card">
-                  <img src="Images\Route-Table.svg" alt="Routing" />
-                  <h3>Tablas de Ruteo</h3>
-                  <p>Tablas para enrutar tráfico desde y hacia Internet mediante IGW y NAT Gateway.</p>
-               </div>
-               <div class="card">
-                  <img src="Images\Internet-Gateway.svg" alt="Internet Gateway" />
-                  <h3>Internet Gateway</h3>
-                  <p>Permite que recursos en subredes públicas se comuniquen con Internet.</p>
-               </div>
-               <div class="card">
-                  <img src="Images\Route-53.png" alt="Route 53" />
-                  <h3>Route 53</h3>
-                  <p>Asignación de dominio <code>tfg-joqr.es</code> al Load Balancer mediante registros A y CNAME.</p>
-               </div>
-               <div class="card">
-                  <img src="Images\Auto-Scaling.png" alt="Auto Scaling" />
-                  <h3>Auto Scaling Group</h3>
-                  <p>Escalado automático de instancias NGINX en subredes privadas, con mínimo 2 y máximo 5 instancias.
+                  <img src="Images\Network-Security-Groups.svg" alt="NSG" />
+                  <h3>Network Security Groups</h3>
+                  <p>
+                     Asocia el Security Group de MySQL a su interfaz y define reglas
+                     para permitir MySQL (3306) desde la subred pública, así como
+                     HTTP y SSH entrantes al jumpbox y al VMSS.
                   </p>
                </div>
                <div class="card">
-                  <img src="Images\Load-Balancing.png" alt="ALB" />
-                  <h3>Application Load Balancer</h3>
-                  <p>Balanceador HTTP en subredes públicas conectado a Target Group de instancias privadas.</p>
+                  <img src="Images\Public-IP-Addresses.svg" alt="Public IP" />
+                  <h3>IP Públicas</h3>
+                  <p>
+                     Proporciona IPs estáticas para tres funciones: el frontend del
+                     Load Balancer, el tráfico saliente del NAT Gateway y el acceso
+                     SSH al jumpbox.
+                  </p>
+               </div>
+               <div class="card">
+                  <img src="Images\Subnet.svg" alt="Private Subnet" />
+                  <h3>Private Subnet</h3>
+                  <p>
+                     Subnet privado asociado al NAT Gateway. instancias del VMSS y
+                     MySQL.
+                  </p>
+               </div>
+               <div class="card">
+                  <img src="Images\Subnet.svg" alt="Public Subnet" />
+                  <h3>Public Subnet</h3>
+                  <p>Subnet público para el jumpbox y LB.</p>
+               </div>
+               <div class="card">
+                  <img src="Images\Virtual-Networks.svg" alt="Virtual Network" />
+                  <h3>Virtual Network</h3>
+                  <p>Red virtual que engloba todas las subnets.</p>
                </div>
             </div>
          </section>
       </main>
-      <div style="text-align: center; margin: 40px 0;">
+      <div style="text-align: center; margin: 40px 0">
          <a href="index.html" class="btn">Volver</a>
       </div>
       <footer>© 2025 Jesús Quimbay Rojas — Trabajo Final de Grado ASIR</footer>
